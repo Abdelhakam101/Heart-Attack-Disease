@@ -533,20 +533,20 @@ def main():
             st.plotly_chart(fig)
             st.markdown('*'*50)
 #######################################################################################################################################
-        # if sb== 'Multivariate':
-        #     col_id =st.selectbox("__Select what type to show visualization it__",['State', 'Sex', 'GeneralHealth', 'PhysicalHealthDays',
-        #                         'MentalHealthDays', 'LastCheckupTime', 'PhysicalActivities'])
+        if sb== 'Multivariate':
+            col_id =st.selectbox("__Select what type to show visualization it__",['State', 'Sex', 'GeneralHealth', 'PhysicalHealthDays',
+                                'MentalHealthDays', 'LastCheckupTime', 'PhysicalActivities'])
                                 
-        #     # col_count =st.selectbox('__choose the second column__' , ['State', 'Sex', 'GeneralHealth', 'PhysicalHealthDays',
-        #     #                     'MentalHealthDays', 'LastCheckupTime', 'PhysicalActivities',
-        #     #                     ])
-        #     def sunburst_chart (id,count):
-        #         fig = go.Figure(go.Sunburst(
-        #                     labels=id,
-        #                     parents=count,
-        #                     values='HadHeartAttack'
-        #                     ))
-        #     st.plotly_chart(sunburst_chart(col_id,count='LastCheckupTime'))
+            col_count =st.selectbox('__choose the second column__' , ['State', 'Sex', 'GeneralHealth', 'PhysicalHealthDays',
+                                'MentalHealthDays', 'LastCheckupTime', 'PhysicalActivities',
+                                ])
+            def sunburst_chart (id,count):
+                fig = go.Figure(go.Sunburst(
+                            labels=id,
+                            parents=count,
+                            values='HadHeartAttack'
+                            ))
+            st.plotly_chart(sunburst_chart(col_id,count='LastCheckupTime'))
 
 #######################################################################################################################################
 
