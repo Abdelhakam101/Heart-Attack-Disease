@@ -98,11 +98,10 @@ def main():
         st.markdown('*'*50)
     #####################################################################################################################################
     if add_selectbox =="EDA":
-        st.subheader("In Exploratory data analysis (EDA) we have 3 type")
+        st.subheader("Exploratory data analysis (EDA)")
         st.markdown("1) Univariate")
         st.markdown("2) Bivariate")
-        st.markdown("3) Multivariate")
-        sb=st.selectbox("__Select what type to show visualization it__",["Univariate","Bivariate","Multivariate"])
+        sb=st.selectbox("__Select what type to show visualization it__",["Univariate","Bivariate"])
         #########################   
         if sb== "Univariate":
             # fig=px.histogram(df , x='State',text_auto="0.2s",width=1500,height=600)
@@ -533,20 +532,20 @@ def main():
             st.plotly_chart(fig)
             st.markdown('*'*50)
 #######################################################################################################################################
-        if sb== 'Multivariate':
-            col_id =st.selectbox("__Select what type to show visualization it__",['State', 'Sex', 'GeneralHealth', 'PhysicalHealthDays',
-                                'MentalHealthDays', 'LastCheckupTime', 'PhysicalActivities'])
+        # if sb== 'Multivariate':
+        #     col_id =st.selectbox("__Select what type to show visualization it__",['State', 'Sex', 'GeneralHealth', 'PhysicalHealthDays',
+        #                         'MentalHealthDays', 'LastCheckupTime', 'PhysicalActivities'])
                                 
-            col_count =st.selectbox('__choose the second column__' , ['State', 'Sex', 'GeneralHealth', 'PhysicalHealthDays',
-                                'MentalHealthDays', 'LastCheckupTime', 'PhysicalActivities',
-                                ])
-            def sunburst_chart (id,count):
-                fig = go.Figure(go.Sunburst(
-                            labels=id,
-                            parents=count,
-                            values='HadHeartAttack'
-                            ))
-            st.plotly_chart(sunburst_chart(col_id,count='LastCheckupTime'))
+        #     col_count =st.selectbox('__choose the second column__' , ['State', 'Sex', 'GeneralHealth', 'PhysicalHealthDays',
+        #                         'MentalHealthDays', 'LastCheckupTime', 'PhysicalActivities',
+        #                         ])
+        #     def sunburst_chart (id,count):
+        #         fig = go.Figure(go.Sunburst(
+        #                     labels=id,
+        #                     parents=count,
+        #                     values='HadHeartAttack'
+        #                     ))
+        #     st.plotly_chart(sunburst_chart(col_id,count='LastCheckupTime'))
 
 #######################################################################################################################################
 
